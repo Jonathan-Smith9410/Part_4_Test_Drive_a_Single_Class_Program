@@ -81,6 +81,18 @@ def test_returns_50_with_one_correct_check_out_of_two():
     document.check("Hello this is a test.")
     document.check("Hello this is also a test")
     assert document.percentage_good() == 50
+
+"""
+percentage_good()
+Returns 33 if one test run correctly and two incorrectly
+"""
+def test_returns_33_with_one_correct_check_out_of_three():
+    document = GrammarStats()
+    document.check("Hello this is a test.")
+    document.check("Hello this is also a test")
+    document.check("Hello this is a third test")
+    assert document.percentage_good() == 33
+
 """
 percentage_good()
 Returns 0 if one test run incorrectly
